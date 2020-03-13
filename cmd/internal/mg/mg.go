@@ -75,7 +75,7 @@ func Die(err error) {
 
 func parseKey(src, key string) {
 	f := strings.Fields(key)
-	if len(f) != 2 || !strings.Contains(f[0], ".") || !strings.HasPrefix(f[1], "api:key-") {
+	if len(f) != 2 || !strings.Contains(f[0], ".") || !strings.HasPrefix(f[1], "api:") {
 		Die(fmt.Errorf("malformed mailgun API key in %s", src))
 	}
 	Domain = f[0]
