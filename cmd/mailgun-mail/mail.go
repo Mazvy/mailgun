@@ -55,7 +55,7 @@ import (
 	"strings"
 
 	"rsc.io/getopt"
-	"rsc.io/mailgun/cmd/internal/mg"
+	"github.com/davars/mailgun/cmd/internal/mg"
 )
 
 func usage() {
