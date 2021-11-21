@@ -12,10 +12,11 @@ builds:
     binary: mailx
     goos:
       - linux
-
   - main: ./cmd/mailgun-sendmail
     id: "sendmail"
     binary: sendmail
+    goos:
+      - linux
 archives:
   - replacements:
       darwin: Darwin
