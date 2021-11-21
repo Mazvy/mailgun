@@ -17,6 +17,9 @@ builds:
       - amd64
       - arm
       - arm64
+    goarm:
+      - 6
+      - 7
   - main: ./cmd/mailgun-sendmail
     id: "sendmail"
     binary: sendmail
@@ -27,6 +30,9 @@ builds:
       - amd64
       - arm
       - arm64
+    goarm:
+      - 6
+      - 7
 archives:
   - replacements:
       darwin: Darwin
