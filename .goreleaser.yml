@@ -12,11 +12,21 @@ builds:
     binary: mailx
     goos:
       - linux
+    goarch:
+      - 386
+      - amd64
+      - arm
+      - arm64
   - main: ./cmd/mailgun-sendmail
     id: "sendmail"
     binary: sendmail
     goos:
       - linux
+    goarch:
+      - 386
+      - amd64
+      - arm
+      - arm64
 archives:
   - replacements:
       darwin: Darwin
