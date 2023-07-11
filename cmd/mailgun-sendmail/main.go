@@ -30,18 +30,17 @@
 //	-r addr
 //	    archaic equivalent of -f
 //
-// Configuration
+// # Configuration
 //
 // Mailgun-mail expects to find an mailgun API domain and authorization key
 // of the form "<domain> api:key-<hexstring>" in the environment variable
 // $MAILGUNKEY, or else in the file $HOME/.mailgun.key,
 // or else in the file /etc/mailgun.key.
 //
-// Diagnostics
+// # Diagnostics
 //
 // If the file /var/log/mailgun.log can be opened for writing, mailgun
 // logs its actions, successes, and failures there.
-//
 package main
 
 import (
@@ -54,8 +53,8 @@ import (
 	"os"
 	"sort"
 
-	"rsc.io/getopt"
 	"github.com/davars/mailgun/cmd/internal/mg"
+	"rsc.io/getopt"
 )
 
 func usage() {
@@ -109,6 +108,7 @@ func main() {
 	flag.BoolVar(&vflag, "v", false, "verbose mode")
 	flag.StringVar(new(string), "o", "", "set option (ignored)")
 	// flag.Var(&Oflag, "O", "", "set `option=value`")
+	flag.StringVar(new(string), "N", "", "dsn (ignored)")
 
 	flag.Usage = usage
 	getopt.Parse()
