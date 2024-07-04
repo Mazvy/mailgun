@@ -53,7 +53,7 @@ import (
 	"os"
 	"sort"
 
-	"github.com/davars/mailgun/cmd/internal/mg"
+	"github.com/Mazvy/mailgun/cmd/internal/mg"
 	"rsc.io/getopt"
 )
 

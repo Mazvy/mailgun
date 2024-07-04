@@ -1,4 +1,4 @@
-module github.com/davars/mailgun
+module github.com/Mazvy/mailgun
 
 go 1.17
 

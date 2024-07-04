@@ -204,7 +204,7 @@ func Mail(msg *Message) {
 func startPost(from *mail.Address, to []*mail.Address, endpoint string) (w *multipart.Writer, end func()) {
 	pr, pw := io.Pipe()
 	w = multipart.NewWriter(pw)
-	endpoint = "https://api.mailgun.net/v3/" + Domain + "/" + endpoint
+	endpoint = "https://api.eu.mailgun.net/v3/" + Domain + "/" + endpoint
 	c := make(chan int)
 	go runPost(from, to, endpoint, w.FormDataContentType(), pr, c)
 	end = func() {
