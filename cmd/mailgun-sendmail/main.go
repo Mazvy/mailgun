@@ -73,7 +73,7 @@ var (
 	iflag bool
 	tflag bool
 	vflag bool
-	Kflag bool
+	Kflag string
 
 	to mg.AddrListFlag
 )
