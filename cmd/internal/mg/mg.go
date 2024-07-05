@@ -28,6 +28,7 @@ var (
 	APIKey  string
 	User    string = os.Getenv("USER")
 	Verbose bool
+	KeyFile string
 )
 
 func isTTY() bool {
@@ -59,6 +60,9 @@ func readConfig() {
 		return
 	}
 	file = "/etc/mailgun.key"
+	if KeyFile != "" {
+		file = KeyFile
+	}	
 	data, err = ioutil.ReadFile(file)
 	if err == nil {
 		parseKey(file, string(data))

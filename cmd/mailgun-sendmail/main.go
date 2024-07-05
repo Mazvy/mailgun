@@ -73,13 +73,12 @@ var (
 	iflag bool
 	tflag bool
 	vflag bool
+	Kflag bool
 
 	to mg.AddrListFlag
 )
 
 func main() {
-	mg.Init()
-
 	flag.StringVar(&Bflag, "B", "", "set body `type` (ignored)")
 	flag.StringVar(&bflag, "b", "m", "run operation named by `code` (must be m)")
 	/*
@@ -109,9 +108,14 @@ func main() {
 	flag.StringVar(new(string), "o", "", "set option (ignored)")
 	// flag.Var(&Oflag, "O", "", "set `option=value`")
 	flag.StringVar(new(string), "N", "", "dsn (ignored)")
+	flag.StringVar(&Kflag, "K", "", "set the keyfile location")
 
 	flag.Usage = usage
 	getopt.Parse()
+	
+	mg.KeyFile = Kflag
+	mg.Init()
+
 	for _, v := range dflag {
 		switch v {
 		default:
